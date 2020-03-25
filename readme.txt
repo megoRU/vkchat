@@ -1,0 +1,1 @@
+Инструкция по установке плагина https://hlmod.ru/resources/chat-2-vkontakte.959/
