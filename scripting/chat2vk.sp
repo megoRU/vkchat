@@ -210,11 +210,9 @@ public Action VKsay(int iClient, int iArgs)
 		
 		char sSteam[64];
 		GetCmdArgString(sText[iClient], sizeof(sText[]));
-		GetClientAuthId(iClient, AuthId_SteamID64, sSteam, sizeof(sSteam), true);
-		Format(sSteam, sizeof(sSteam), "steamcommunity.com/profiles/%s", sSteam);
 		
-		if (iIncludeServerName) Format(sText[iClient], sizeof(sText[]), "Игрок \"%N\" [ %s ] пишет :NWLN NWLN%s NWLN NWLNСервер : %s",iClient,sSteam,sText[iClient],sServerName);
-		else Format(sText[iClient], sizeof(sText[]), "Игрок \"%N\" [ %s ] пишет :NWLN NWLN%s",iClient,sSteam,sText[iClient]);
+		if (iIncludeServerName) Format(sText[iClient], sizeof(sText[]), "Игрок \"%N\" %s пишет:NWLN NWLN%s NWLN NWLNСервер : %s",iClient,sSteam,sText[iClient],sServerName);
+		else Format(sText[iClient], sizeof(sText[]), "Игрок \"%N\" %s пишет:NWLN NWLN%s",iClient,sSteam,sText[iClient]);
 		
 		if (iChats < 1) PrintToChat(iClient, "%s", iCSGO ? " \x0B>> \x01 Chat2VK не работает.. временно." : ">> Chat2VK не работает.. временно.");
 		else if (iChats == 1)
